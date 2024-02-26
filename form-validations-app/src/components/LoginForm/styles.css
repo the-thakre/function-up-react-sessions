@@ -1,0 +1,25 @@
+.react-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: lightgrey;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#email {
+    padding: 10px;
+    margin: 10px;
+}
+
+#password {
+    padding: 10px;
+    margin: 10px;
+}
