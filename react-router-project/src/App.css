@@ -1,5 +1,24 @@
 .App {
   text-align: center;
+  height: 100vh;
+
+}
+
+.navigation {
+  background-color: lightcoral;
+
+}
+
+.main-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.main-content {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -32,6 +51,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

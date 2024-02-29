@@ -1,0 +1,33 @@
+.product-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 20px;
+    border-radius: 25px;
+
+    .name {
+        font-size: 2.5rem;
+    }
+
+    .price {
+        font-size: 2rem;
+        color: white;
+        margin: 10px 0;
+    }
+
+    .desc {
+        font-size: 1rem;
+    }
+
+    .cat {
+        font-size: 1rem;
+        padding: 5px;
+        background-color: red;
+        color: white;
+        border-radius: 10px;
+
+    }
+}

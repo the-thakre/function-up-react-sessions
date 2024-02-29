@@ -1,39 +1,20 @@
+import { Link, Routes, Route, Navigate } from 'react-router-dom' //react imports
+
+import AboutUs from './components/AboutUs';
+import Home from './components/Home';
+import ContactUs from './components/Contacts';
+import Products from './components/Products';
+
 import logo from './logo.svg';
 import './App.css';
-import { Route, Link, Routes, useParams, Navigate, useLocation } from 'react-router-dom'
-
-const Home = () => {
-  const location = useLocation();
-  console.log(location)
-  const queryParams = new URLSearchParams(location.search);
-  console.log(queryParams.get('height'))
-  return <h2>Home</h2>
-}
-
-const About = () => {
-  return <h2>
-    <Link to="/about/us">About us</Link>
-    <Routes>
-      <Route exact path="/about/us" element={<AboutUs />} />
-    </Routes>
-  </h2>
-
-}
-
-const AboutUs = () => {
-  return <h2>
-    ABOUT US</h2>
-}
-
-const Contacts = () => {
-  return <h2>Contacts</h2>
-}
+import ContactUsByName from './components/ContactUsByName';
 
 function App() {
   // 1. Basic example of react routing (use of LINK and ROUTE)
   // 2. Route Parameters (useParams)
   // 3. Redirects (using Navigate)
-  // 4. useHistory uses (push,replace,goBack,goForward)
+  // 4. useHistory uses (push,replace,goBack,goForward) ====== < version 6
+  // 5. useNavigate ====== > version 6
   // 5. Query Parameters (using useLocation):
   // 6. Nested Routes
   // 7. Dynamic routing
@@ -43,13 +24,22 @@ function App() {
       <div>
         <nav>
           <Link to="/">Home</Link>
-          <Link to="/about/3">About</Link>
+          <Link to="/about">About</Link>
           <Link to="/contacts">Contacts</Link>
+          <Link to="/products">Products</Link>
+          <Link to="/dummy-products">dummy Products</Link>
+          <div><a href='/about' target='_blank'>New about us page</a></div>
         </nav>
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/about/:id" element={<About />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contacts" element={<ContactUs />} />
+          <Route path="/contacts/:id" element={<ContactUs />} />
+          <Route path="/contacts/company-name/xyz" element={<ContactUsByName />} />
+          <Route path="/contacts/ceo-name" element={<ContactUsByName />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/dummy-products" element={<Products />} />
+          <Route path="/*" element={<Navigate to='/' />} />
         </Routes>
       </div>
     </div>

@@ -1,0 +1,20 @@
+.xi-navigation-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+        padding: 10px 20px;
+        margin: 10px;
+        background-color: lightgray;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        a {
+            text-decoration: unset !important;
+
+        }
+    }
+}
