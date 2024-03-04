@@ -10,6 +10,8 @@ import './App.css';
 import ContactUsByName from './components/ContactUsByName';
 import Students from './components/Students';
 import { useState } from 'react';
+import Clothes from './components/Clothes';
+import Electronics from './components/Electronics';
 
 function App() {
   const [id, setId] = useState(0);
@@ -51,12 +53,15 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contacts" element={<ContactUs />} />
           <Route path={`/contacts/:id`} element={<ContactUs />} />
+          <Route path={`/contacts/:id/:studentName`} element={<ContactUs />} />
           <Route path="/contacts/company-name/xyz" element={<ContactUsByName />} />
           <Route path="/contacts/ceo-name" element={<ContactUsByName />} />
-          <Route path="/products" element={<Products />} />
           <Route path="/dummy-products" element={<Products />} />
           <Route path="/*" element={<Navigate to='/' />} />
           <Route path="contacts/students/:studentId" element={<ContactUs />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/clothes" element={<Clothes />} />
+          <Route path="/products/electronics" element={<Electronics />} />
         </Routes>
       </div>
     </div>
@@ -64,3 +69,4 @@ function App() {
 }
 
 export default App;
+
