@@ -19,6 +19,11 @@ function App() {
   // 6. Nested Routes
   // 7. Dynamic routing
 
+  // VS CODE SHORTCUTS
+  // cmd/ctrl + click
+  // cmd/ctrl + shift + p => commnd pallete
+  // cmd/ctrl + p  => files
+
   return (
     <div className="App">
       <div>

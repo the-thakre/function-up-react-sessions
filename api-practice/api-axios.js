@@ -2,7 +2,7 @@
 const axios = require('axios');
 
 // to use axios in a folder
-// 1. npm init -y  (# This initializes a package.json file if you don't have one)
+// 1. npm init -y  # This initializes a package.json file if you don't have one
 // 2. npm install axios
 
 
