@@ -1,4 +1,4 @@
-import { Link, Routes, Route, Navigate } from 'react-router-dom' //react imports
+import { Link, Routes, Route, Navigate, useNavigate } from 'react-router-dom' //react imports
 
 import AboutUs from './components/AboutUs';
 import Home from './components/Home';
@@ -8,10 +8,14 @@ import Products from './components/Products';
 import logo from './logo.svg';
 import './App.css';
 import ContactUsByName from './components/ContactUsByName';
+import Students from './components/Students';
+import { useState } from 'react';
 
 function App() {
+  const [id, setId] = useState(0);
+  const navigate = useNavigate();
   // 1. Basic example of react routing (use of LINK and ROUTE)
-  // 2. Route Parameters (useParams)
+  // 2. Route Parameters (useParams) //pathParams
   // 3. Redirects (using Navigate)
   // 4. useHistory uses (push,replace,goBack,goForward) ====== < version 6
   // 5. useNavigate ====== > version 6
@@ -24,9 +28,16 @@ function App() {
   // cmd/ctrl + shift + p => commnd pallete
   // cmd/ctrl + p  => files
 
+  // www.react.com/:id/:name/:course --> id path param
+  // www.react.com?name=vishal&location=banglore&course=btech&subject=cse --> name query param
+
   return (
     <div className="App">
       <div>
+        <button onClick={() => {
+          setId(id + 1);
+          navigate(`/contacts/${id + 1}`);
+        }}>Increment the contact id</button>
         <nav>
           <Link to="/">Home</Link>
           <Link to="/about">About</Link>
@@ -39,12 +50,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contacts" element={<ContactUs />} />
-          <Route path="/contacts/:id" element={<ContactUs />} />
+          <Route path={`/contacts/:id`} element={<ContactUs />} />
           <Route path="/contacts/company-name/xyz" element={<ContactUsByName />} />
           <Route path="/contacts/ceo-name" element={<ContactUsByName />} />
           <Route path="/products" element={<Products />} />
           <Route path="/dummy-products" element={<Products />} />
           <Route path="/*" element={<Navigate to='/' />} />
+          <Route path="contacts/students/:studentId" element={<ContactUs />} />
         </Routes>
       </div>
     </div>
