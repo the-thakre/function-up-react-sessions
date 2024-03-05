@@ -1,8 +1,12 @@
 // SINGLE POST
 // GET
-fetch('https://jsonplaceholder.typicode.com/posts/1')
-    .then((response) => response.json())
-    .then((json) => console.log(json));
+
+// fetch async fun
+// promise return by every async fun
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1') //path param
+//     .then((response) => response.json())
+//     .then((json) => console.log(json));
 
 
 
@@ -24,16 +28,19 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 // ADD/POST NEW POST
 // POST 
+
+// let newPost = {
+//     title: 'Api session',
+//     body: 'bar jajsklksal;  ',
+//     userId: 1,
+// }
+
+// console.log(newPost);
+// console.log(JSON.stringify(newPost));
+
 // fetch('https://jsonplaceholder.typicode.com/posts', {
 //     method: 'POST',
-//     body: JSON.stringify({
-//         title: 'foo',
-//         body: 'bar',
-//         userId: 1,
-//     }),
-//     headers: {
-//         'Content-type': 'application/json; charset=UTF-8',
-//     },
+//     body: JSON.stringify(newPost),
 // })
 //     .then((response) => response.json())
 //     .then((json) => console.log(json));
@@ -50,9 +57,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 //     method: 'PUT',
 //     body: JSON.stringify({
 //         id: 1,
-//         title: 'foo',
-//         body: 'bar',
-//         userId: 1,
+//         title: 'foo jnsajkksa',
+//         body: 'bar samsasj',
+//         userId: 3,
 //     }),
 //     headers: {
 //         'Content-type': 'application/json; charset=UTF-8',
@@ -71,8 +78,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 // DELETE  
 // fetch('https://jsonplaceholder.typicode.com/posts/1', {
 //     method: 'DELETE',
-// });
-
+// }).then(resp => resp.json()).then(data => console.log(data));
 
 
 {/* ===================================================================================================*/ }
@@ -81,7 +87,7 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 // GET POST BY USER ID
 // GET
-// fetch('https://jsonplaceholder.typicode.com/posts?userId=1')
+// fetch('https://jsonplaceholder.typicode.com/posts?userId=2') //queryParams
 //     .then((response) => response.json())
 //     .then((json) => console.log(json));
 
@@ -92,9 +98,9 @@ fetch('https://jsonplaceholder.typicode.com/posts/1')
 
 
 // GET COMMENTS
-// fetch('https://jsonplaceholder.typicode.com/posts/1/comments')
-//     .then((response) => response.json())
-//     .then((json) => console.log(json));
+fetch('https://jsonplaceholder.typicode.com/posts/100/comments')
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
 
 
