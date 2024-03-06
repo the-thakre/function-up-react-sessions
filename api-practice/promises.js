@@ -7,10 +7,12 @@ const myPromise = new Promise((resolve, reject) => {
         } else {
             reject("Operation failed");
         }
-    }, 1000);
+    }, 10000);
 });
 
+
 // Handling the Promise
+console.log('myPromise', myPromise)
 myPromise.then((result) => {
     console.log(result); // Operation successful
 })

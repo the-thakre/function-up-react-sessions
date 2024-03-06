@@ -29,21 +29,21 @@
 // ADD/POST NEW POST
 // POST 
 
-// let newPost = {
-//     title: 'Api session',
-//     body: 'bar jajsklksal;  ',
-//     userId: 1,
-// }
+let newPost = {
+    title: 'Api session',
+    body: 'bar jajsklksal;  ',
+    userId: 1,
+}
 
-// console.log(newPost);
-// console.log(JSON.stringify(newPost));
+console.log(newPost);
+console.log(JSON.stringify(newPost));
 
-// fetch('https://jsonplaceholder.typicode.com/posts', {
-//     method: 'POST',
-//     body: JSON.stringify(newPost),
-// })
-//     .then((response) => response.json())
-//     .then((json) => console.log(json));
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    body: JSON.stringify(newPost),
+})
+    .then((response) => response.json())
+    .then((json) => console.log(json));
 
 
 

@@ -5,13 +5,16 @@ const axios = require('axios');
 // 1. npm init -y  # This initializes a package.json file if you don't have one
 // 2. npm install axios
 
-
-
 // SINGLE POST
 // GET
-axios.get('https://jsonplaceholder.typicode.com/posts/1')
+axios.get('https://jsonplaceholder.typicode.com/posts')
     .then(response => console.log(response.data))
     .catch(error => console.error('Error:', error));
+
+// fetch('https://jsonplaceholder.typicode.com/posts/1')
+//     .then((response) => response.json())
+//     .then((json) => console.log(json))
+//     .catch(error => console.error('Error:', error));
 
 
 
@@ -26,7 +29,11 @@ axios.get('https://jsonplaceholder.typicode.com/posts/1')
 //     body: 'bar',
 //     userId: 1
 // };
-// axios.post('https://jsonplaceholder.typicode.com/posts', postData)
+// axios.delete('https://jsonplaceholder.typicode.com/posts/100')
+//     .then(response => console.log(response.data))
+//     .catch(error => console.error('Error:', error));
+
+// axios.get('https://jsonplaceholder.typicode.com/posts/100')
 //     .then(response => console.log(response.data))
 //     .catch(error => console.error('Error:', error));
 
