@@ -1,12 +1,25 @@
-// synchronous and asynchronous 
+function asyncOperation() {
+    return new Promise(resolve => {
+        setTimeout(() => {
+            resolve('Async Operation Completed');
+        }, 5000);
+    });
+}
 
+// async await
+// async function can behave like a synchronous function
 
-console.log('Hi STEP 1'); //1
+async function exampleWithPromise() {
+    try {
+        console.log('STEP 1');
+        const result = await asyncOperation();
+        console.log('STEP 2', result);
+        console.log('result', result);
 
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
 
-console.log('Hi STEP 2'); //10
-
-
-console.log('Hi STEP 3'); // 11
-console.log('Hi STEP 4'); // 12
-console.log('Hi STEP 5'); // 13
+// Call the async function
+exampleWithPromise();
