@@ -4,17 +4,19 @@ import { useNavigate, useLocation, useParams } from 'react-router-dom'
 const ContactUs = () => {
     const navigate = useNavigate();
     // const location = useLocation();
-    const params = useParams();
+    const params = useParams(); //for Path params 
     // const [name, setName] = useState();
 
     useEffect(() => {
-        // const urlSearchParams = new URLSearchParams(window.location.search);
-        // const params = Object.fromEntries(urlSearchParams.entries());
-        // console.log(params);
+        const urlSearchParams = new URLSearchParams(window.location.search);
+        const queryParams = Object.fromEntries(urlSearchParams.entries());
+        console.log(queryParams);
     }, [])
 
     // contacts/company-contact
     // contacts/ceo-contact
+    // contacts/ayush?age=18
+    // contacts/vishal?name=thakre
 
     return (
         <div>This is our ContactUs page.
