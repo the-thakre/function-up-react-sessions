@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
 import { UserContext } from './UserContext';
+import ShowProfile from './ShowProfile';
 
 const UserProfile = () => {
     const { user, updateUser } = useContext(UserContext);
 
     const handleLogout = () => {
-        updateUser(null);
+        updateUser('NEW USER');
     };
 
     return (
         <div>
+            <ShowProfile />
             {user ? (
                 <div>
                     <p>Welcome, {user}!</p>

@@ -4,7 +4,7 @@ import ThemeContext from './ThemeContext'
 const Theme = () => {
     const theme = useContext(ThemeContext);
     return (
-        <div>{theme}</div>
+        <div> this is the new theme.{theme}</div>
     )
 }
 
